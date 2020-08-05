@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/partials/header.css" rel="stylesheet">
+    <link href="/css/partials/give-classes-page.css" rel="stylesheet">
+    <link href="/css/partials/forms.css" rel="stylesheet">
+
+    <script src="/scripts/addField.js" defer></script>
+
+    <title>Proffy | Sua plataforma de estudos online</title>
+</head>
+<body id="give-classes-page">
+    <div id="container">
+        <header class="header">
+            <div class="top-containers">
+                <a href="/index.html">
+                    <img src="/images/icons/back.svg" alt="back button">
+                </a>
+                <img src="/images/logo.svg" alt="Proffy">
+            </div>
+
+            <div class="header-containers">
+                <strong>Que incrível que você quer dar aulas.</strong>
+                <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+            </div>
+            </header>
+
+            <main>
+                <form action="" id="create-class">
+                    <fieldset>
+                        <legend>Seus dados</legend>
+
+                        <div class="input-block">
+                            <label for="name">Nome completo</label>
+                            <input name="name" id="name" required>
+                        </div><!--input-block name-->
+
+                        <div class="input-block">
+                            <label for="avatar">Link da sua foto<small>(Comece com https://)</small></label>
+                            <input type="url" name="avatar" id="avatar" required>
+                        </div><!--input-block avatar-->
+
+                        <div class="input-block">
+                            <label for="whatsapp">Whatsapp <small>(Somente números)</small></label>
+                            <input type="number" name="whatsapp" id="whatsapp" required>
+                        </div><!--input-block whatsapp-->
+
+                        <div class="textarea-block">
+                            <label for="bio">Biografia</label>
+                            <textarea name="bio" id="bio" required></textarea>
+                        </div><!--Textarea-block biografia-->
+
+                    </fieldset><!--fieldset class-->
+
+                    <fieldset>
+                        <legend>Sobre a aula</legend>
+                        <div class="block">
+                            <label name="subject">Matéria</label>
+                            <select name="subject" id="subject">
+                                <option value="">Selecione uma opção</option>
+                                <option value="1">Artes</option>
+                                <option value="2">Biologia</option>
+                                <option value="3">Ciências</option>
+                                <option value="4">Educação Física</option>
+                                <option value="5">Física</option>
+                                <option value="6">Geografia</option>
+                                <option value="7">História</option>
+                                <option value="8">Matemática</option>
+                                <option value="9">Português</option>
+                                <option value="10">Química</option>
+                            </select>
+                        </div><!--Select-block aulas-->
+
+                        <div class="input-block">
+                            <label for="cost">Custo da hora/aula
+                                <small>(em R$)</small>
+                            </label>
+                            <input type="cost" id="cost" type="number" required>
+                        </div><!--input-block custo-->
+                    </fieldset><!--fieldset cost-->
+
+                    <fieldset id="schedule-items">
+                        <legend>Horários disponíveis
+                            <button type="button" id="add-time">+ Novo Horário</button>
+                        </legend><!--legend add-time-->
+
+                        <div class="schedule-item">
+                            <div class="block">
+                                <label for="weekday">Dia da semana</label>
+                                <select name="weekday[]" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="0">Domingo</option>
+                                    <option value="1">Segunda-feira</option>
+                                    <option value="2">Terça-feira</option>
+                                    <option value="3">Quarta-feira</option>
+                                    <option value="4">Quinta-feira</option>
+                                    <option value="5">Sexta-feira</option>
+                                    <option value="6">Sabádo</option>
+                                </select>
+                            </div><!--select-block weekday-->
+
+                            <div class="input-block">
+                                <label for="time-from">Das</label>
+                                <input type="time" name="time-from[]" required>
+                            </div><!--input-block hora inicial-->
+
+                            <div class="input-block">
+                                <label for="time-to">Até</label>
+                                <input type="time" name="time-to[]" required>
+                            </div><!--input-block hora final-->
+                        </div><!--schedule-item-->
+                    </fieldset><!--fieldset horarios-->
+
+                </form><!--form-->
+
+                <footer>
+                    <p>
+                        <img src="/images/icons/warning.svg" alt="Aviso importante">
+                        Importante! <br>
+                        Preencha todos os dados.
+                    </p>
+                    <button type="submit" form="create-class">Salvar cadastro</button>
+                </footer>
+            </main>
+    </div>
+</body>
+</html>
