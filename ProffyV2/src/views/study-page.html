@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/partials/study-page.css" rel="stylesheet">
+    <link href="/css/partials/header.css" rel="stylesheet">
+    <link href="/css/partials/forms.css" rel="stylesheet">
+
+    <title>Proffy | Sua plataforma de estudos online</title>
+</head>
+
+<body>
+    <div id="study-page">
+
+        <div id="container">
+            <header class="header">
+                <div class="top-containers">
+                    <a href="/" alt="Voltar para home-page">
+                        <img src="/images/icons/back.svg" alt="Back-icon">
+                    </a>
+
+                    <img src="/images/logo.svg" alt="Proffy">
+                </div><!--top-containers-->
+
+                <div class="header-containers">
+                    <strong>Estes sãos os proffys disponíveis</strong> <!--Usada pra criar textos com bold por padrão--> 
+
+                    <form id="search-teachers">
+                        <div class="block">
+                            <label for="subject">Máteria</label>
+                            <select name="subject" id="subject">
+                                <option value="" disabled="" hidden="">Selecione uma opção</option><!--Pode-se tirar o disabled e o hidden para que apareça o texto, 
+                                "Selecione uma opção"-->
+                                {%for subject in subjects%}
+                                    <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }}> 
+                                        {{subject}} </option>
+                                {%endfor%}
+                            </select><!--subject-->
+                        </div><!--block-->
+
+                        <div class="block">
+                            <label for="weekday">Dia da Semana</label>
+                            <select name="weekday" id="weekday">
+                                <option value="" disabled="" hidden="">Selecione uma opção</option>
+                                {%for weekday in weekdays%}
+                                <option value="{{loop.index0}}" {{"selected" if filters.weekday == loop.index0}} >
+                                    {{weekday}}
+                                </option>
+                                {%endfor%} <!--Loop.index0 pois o array começa do zero-->
+                            </select><!--weekday-->
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time">Hora</label>
+                            <input name="time" id="time" type="time" value="{{filters.time}}"> 
+                        </div><!--input-block-->
+
+                        <button type="submit">Procurar</button>
+
+                    </form><!--search-teachers-->
+                </div><!--header-containers-->
+
+            </header><!--header-->
+
+            <main>
+
+                {%for proffy in proffys %}
+                <article class="teacher-profile">
+                    <header>
+                        <img
+                            src="{{proffy.avatar}}"
+                            alt="{{proffy.name}}">
+                        <div>
+                            <strong>{{proffy.name}}</strong>
+                            <span>{{proffy.subject}}</span>
+                        </div>
+                    </header><!--header-article-->
+                    <p>{{proffy.bio}}</p><!--descrição da pessoa-->
+
+                    <footer>
+                        <p>Preço/hora<strong>R$ {{proffy.cost}}</strong></p>
+                        <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55{{ proffy.whatsapp }} &text=Tenho interesse na sua aula de {{ proffy.subject }} {{ proffy.name }}"
+                            class="button" target="_blank">
+                            <img src="/images/icons/whatsapp.svg" alt="WhatsApp">
+                            Entrar em contato
+                        </a>
+                    </footer><!--footer-article-->
+                </article><!--article-->
+                {%endfor%}
+            </main><!--main-->
+        </div><!--container-->
+    </div>
+    
+</body><!--study-page-->
+</html>

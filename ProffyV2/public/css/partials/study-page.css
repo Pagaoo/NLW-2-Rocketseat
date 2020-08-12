@@ -1,0 +1,196 @@
+#study-page #container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search-teachers {
+    margin-top: 6.2rem;
+}
+
+#search-teachers label {
+    color: var(--color-text-in-primary);
+}
+
+#search-teachers .block {
+    margin-bottom: 1.4rem;
+}
+
+#search-teachers button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 3.2rem;
+}
+
+#search-teachers button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+#study-page main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+.teacher-profile {
+    background-color: var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.8rem;
+    margin-top: 2.4rem;
+
+}
+
+.teacher-profile header {
+    padding: 3.2rem 2rem;
+    display: flex;
+}
+
+.teacher-profile header img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;/*Quando a imagem é um quadrado perfeito e se usa 50% no border-radius, se tem um circulo*/
+}
+
+.teacher-profile header div {
+    margin-left: 2.4rem;
+}
+
+.teacher-profile header strong {
+    font: 700 2.4rem Archivo;
+    display: block;
+    color: var(--color-text-title);
+}
+
+.teacher-profile header div span {
+    font-size: 1.6rem;
+    display: block; /*Usa-se para ter o span na tela toda, para que assim a margin-top funcione*/
+    margin-top: 0.4rem;
+}
+
+.teacher-profile > p {
+    padding: 0 2rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+.teacher-profile footer {
+    padding: 3.2rem 2rem;
+    background-color: var(--color-box-footer);
+    border: 1px solid var(--color-line-in-white);
+    margin-top: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teacher-profile footer p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+}
+
+.teacher-profile footer p strong {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+}
+
+.teacher-profile footer .button {
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    font: 700 1.4rem Archivo;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /*Tem um espaçamento constante*/
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-left: 1.6rem;
+}
+
+.teacher-profile footer .button:hover {
+    background: var(--color-secondary-dark);
+}
+
+@media (min-width: 700px) {
+    #study-page #container {
+        max-width: 100vw;
+    }
+
+    .header {
+        height: 340px;
+    }
+
+    .header .top-containers {
+        max-width: 1100px;
+    }
+
+    .header .header-containers {
+        max-width: 740px;
+        margin: 0 auto;
+        flex: 1 1; /*Preenche todo o espaço da caixa*/
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header .header-containers strong {
+        max-width: 350px;
+    }
+
+    .teacher-profile header, .teacher-profile footer {
+        padding: 32px;
+    }
+
+    #search-teachers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        position: absolute;
+        bottom: -28px;
+    }
+
+    #study-page main {
+        padding: 32px 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    #search-teachers .block {
+        margin-bottom: 0;
+    }
+
+    /*Pega o primeiro nível de p, ou seja, a primeira tag p dentro do pai*/
+    .teacher-profile > p {
+        padding: 0 32px;
+    }
+
+    .teacher-profile footer p strong {
+        display: initial;
+        margin-left: 16px;
+    }
+
+    .teacher-profile button {
+        width: 245px;
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .teacher-profile footer button img {
+        margin-right: 16px;
+    }
+}
